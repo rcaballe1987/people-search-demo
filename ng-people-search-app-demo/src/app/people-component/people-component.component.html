@@ -1,0 +1,138 @@
+<div class="people-content">
+  <div class="btn-container">
+    <mat-form-field>
+      <input matInput type="text" #peopleSearchInput placeholder="Search People" />
+    </mat-form-field>
+
+    <button mat-button
+            style="margin-left: 20px;"
+            aria-label="Add a new Person"
+            class="text-icon-bt"
+            matTooltip="Add a new Person"
+            (click)="addNewPersonRow()">
+      <div class="icon-text-container">
+        <mat-icon>add_circle</mat-icon> <span>Add Row</span>
+      </div>
+    </button>
+  </div>
+
+  <div class="row" *ngIf="isSearching">
+    <div class="col-12 text-center">
+
+      <h4><b>Searching ... </b></h4>
+
+    </div>
+  </div>
+
+  <form>
+    <table *ngIf="people.length" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- First Name Column -->
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>First Name</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-form-field style="width: 120px;">
+            <input matInput
+                  type="text"
+                  name="firstName"
+                  [(ngModel)]="element.firstName"
+                  [ngModelOptions]="{standalone: true}"
+                  [disabled]="isInputDisabled(element)"
+                  required>
+          </mat-form-field>
+        </td>
+      </ng-container>
+
+      <!-- Last Name Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-form-field style="width: 120px;">
+            <input matInput
+                  type="text"
+                  name="lastName"
+                  [(ngModel)]="element.lastName"
+                  [ngModelOptions]="{standalone: true}"
+                  [disabled]="isInputDisabled(element)"
+                  required>
+          </mat-form-field>
+        </td>
+      </ng-container>
+
+      <!-- Address Column -->
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef>Address</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-form-field style="width: 290px;">
+            <input matInput
+                  type="text"
+                  name="address"
+                  [(ngModel)]="element.address"
+                  [ngModelOptions]="{standalone: true}"
+                  [disabled]="isInputDisabled(element)">
+          </mat-form-field>
+        </td>
+      </ng-container>
+
+      <!-- Age Column -->
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef>Age</th>
+        <td mat-cell *matCellDef="let element">
+          <input matInput
+                type="number"
+                name="age"
+                class="age-input"
+                min="0"
+                [(ngModel)]="element.age"
+                [ngModelOptions]="{standalone: true}"
+                [disabled]="isInputDisabled(element)">
+        </td>
+      </ng-container>
+
+      <!-- Interests Column -->
+      <ng-container matColumnDef="interests">
+        <th mat-header-cell *matHeaderCellDef>Interests</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-select name="interests"
+                      class="interests-input"
+                      [(ngModel)]="element.personInterestIds" [ngModelOptions]="{standalone: true}"
+                      [disabled]="isInputDisabled(element)"
+                      multiple
+          >
+            <mat-option *ngFor="let interest of interests" [value]="interest.id">
+              {{interest.name}}
+            </mat-option>
+          </mat-select>
+        </td>
+      </ng-container>
+
+      <!-- Image Column -->
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef>Image</th>
+        <td mat-cell *matCellDef="let element">
+          <img *ngIf="element.imageLink" src="{{element.imageLink}}">
+        </td>
+      </ng-container>
+
+      <!-- Save Column -->
+      <ng-container matColumnDef="save">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-flat-button
+                  class="primary"
+                  matTooltip="Save the Person"
+                  *ngIf="!element.id"
+                  [disabled]="isSaveBtnDisabled(element)"
+                  (click)="savePerson(element)">Save</button>
+          <button mat-button
+                  (click)="deletePerson(element)"
+                  matTooltip="Delete this Person">
+            <mat-icon>close</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </form>
+</div>

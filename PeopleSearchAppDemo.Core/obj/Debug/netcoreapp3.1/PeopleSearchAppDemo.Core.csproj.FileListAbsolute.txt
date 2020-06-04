@@ -1,0 +1,8 @@
+C:\Users\RobertoAballe\Desktop\PeopleSearchAppDemo\PeopleSearchAppDemo.Core\obj\Debug\netcoreapp3.1\PeopleSearchAppDemo.Core.AssemblyInfoInputs.cache
+C:\Users\RobertoAballe\Desktop\PeopleSearchAppDemo\PeopleSearchAppDemo.Core\obj\Debug\netcoreapp3.1\PeopleSearchAppDemo.Core.AssemblyInfo.cs
+C:\Users\RobertoAballe\Desktop\PeopleSearchAppDemo\PeopleSearchAppDemo.Core\bin\Debug\netcoreapp3.1\PeopleSearchAppDemo.Core.deps.json
+C:\Users\RobertoAballe\Desktop\PeopleSearchAppDemo\PeopleSearchAppDemo.Core\bin\Debug\netcoreapp3.1\PeopleSearchAppDemo.Core.dll
+C:\Users\RobertoAballe\Desktop\PeopleSearchAppDemo\PeopleSearchAppDemo.Core\bin\Debug\netcoreapp3.1\PeopleSearchAppDemo.Core.pdb
+C:\Users\RobertoAballe\Desktop\PeopleSearchAppDemo\PeopleSearchAppDemo.Core\obj\Debug\netcoreapp3.1\PeopleSearchAppDemo.Core.dll
+C:\Users\RobertoAballe\Desktop\PeopleSearchAppDemo\PeopleSearchAppDemo.Core\obj\Debug\netcoreapp3.1\PeopleSearchAppDemo.Core.pdb
+C:\Users\RobertoAballe\Desktop\PeopleSearchAppDemo\PeopleSearchAppDemo.Core\obj\Debug\netcoreapp3.1\PeopleSearchAppDemo.Core.csprojAssemblyReference.cache

@@ -1,0 +1,78 @@
+$gray-darker:   #4A4A4A;
+$gray-light:    #A6A6A6;
+$gray-lighter:  #DEDEDF;
+$gray-lightest: #F5F5F5;
+
+$primary:       #0385EC;
+$primary-hover: #0369BC;
+
+$white:         #FFFFFF;
+
+
+.people-content {
+  margin-left: 25px;
+  margin-top: 80px;
+
+  .btn-container {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+
+    .icon-text-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .mat-icon-button {
+      color: $gray-light;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .age-input {
+    border: 1px solid $gray-lighter;
+    width: 70px;
+    text-align: right;
+    margin: 4px;
+  }
+
+  .interests-input {
+    width: 150px;
+  }
+
+}
+
+table {
+  width: 70%;
+  margin-top: 15px;
+}
+
+.text-icon-btn.mat-button {
+  color: $gray-darker;
+  padding: 0;
+
+  .mat-button-wrapper {
+      vertical-align: inherit;
+
+      .mat-icon {
+          margin-right: 6px;
+      }
+  }
+
+  &:hover {
+      color: $primary;
+  }
+}
+
+.primary {
+  color: #0385EC;
+
+  &:hover {
+    color: $white;
+    background-color: $primary-hover;
+  }
+}
